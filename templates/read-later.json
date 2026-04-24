@@ -2,7 +2,7 @@
 	"schemaVersion": "0.1.0",
 	"name": "Read Later",
 	"behavior": "create",
-	"noteContentFormat": "{{content}}",
+	"noteContentFormat": "# Highlights \n\n> \n\n# Content\n\n{{content}}",
 	"properties": [
 		{
 			"name": "title",
@@ -36,7 +36,7 @@
 		},
 		{
 			"name": "tags",
-			"value": "clippings, reference/article, status/uread",
+			"value": "clippings, reference/article, status/unread",
 			"type": "multitext"
 		}
 	],

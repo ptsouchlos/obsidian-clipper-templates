@@ -2,13 +2,8 @@
 	"schemaVersion": "0.1.0",
 	"name": "Wikipedia",
 	"behavior": "create",
-	"noteContentFormat": "{{selectorHtml:#mw-content-text|remove_html:(\".navbox,.printfooter,.side-box\")|markdown}}",
+	"noteContentFormat": "# Highlights \n\n> \n\n# Content\n\n{{selectorHtml:#mw-content-text|remove_html:(\".navbox,.printfooter,.side-box\")|markdown}}",
 	"properties": [
-		{
-			"name": "categories",
-			"value": "[[Clippings]]",
-			"type": "multitext"
-		},
 		{
 			"name": "title",
 			"value": "{{title}}",
@@ -25,6 +20,11 @@
 			"type": "multitext"
 		},
 		{
+			"name": "published",
+			"value": "",
+			"type": "date"
+		},
+		{
 			"name": "created",
 			"value": "{{date}}",
 			"type": "date"
@@ -36,13 +36,13 @@
 		},
 		{
 			"name": "tags",
-			"value": "clippings, wikipedia",
+			"value": "clippings, reference/article, status/unread",
 			"type": "multitext"
 		}
 	],
 	"triggers": [
 		"/^https:\\/\\/[a-z-.]+\\.wikipedia\\.org\\/wiki\\/.*$/"
 	],
-	"noteNameFormat": "{{title}}",
-	"path": "Clippings"
+	"noteNameFormat": "CLIP - {{title}}",
+	"path": "00 +Clippings"
 }

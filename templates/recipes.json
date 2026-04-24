@@ -5,8 +5,8 @@
 	"noteContentFormat": "{{description}}\n\n## Ingredients\n\n{{schema:recipeIngredient|list:task}}\n\n## Instructions\n\n{{schema:recipeInstructions[*].text|list:task}}\n\n## Nutrition\n\n{{schema:@Recipe:nutrition|uncamel|capitalize|table|replace:(\"@type\":\"Nutrient\",\"Nutrition information\":\"Quantity\")}}",
 	"properties": [
 		{
-			"name": "categories",
-			"value": "[[Recipes]]",
+			"name": "category",
+			"value": "[[Recipe]]",
 			"type": "multitext"
 		},
 		{
@@ -58,6 +58,6 @@
 	"triggers": [
 		"schema:@Recipe"
 	],
-	"noteNameFormat": "{{title}}",
-	"path": "References"
+	"noteNameFormat": "RECIPE - {{title}}",
+	"path": "01 Knowledge/Notes/References"
 }

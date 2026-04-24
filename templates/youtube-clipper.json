@@ -1,47 +1,36 @@
-
 {
 	"schemaVersion": "0.1.0",
 	"name": "YouTube",
 	"behavior": "create",
-	"noteContentFormat": "## About\n\ntype:: #type/video/youtube/new\n\n![{{title}}]({{schema:@VideoObject:embedUrl|replace:\"embed/\":\"watch?v=\"}})\n\n## Description\n\n{{schema:@VideoObject:description}}\n\n## Notes\n\nYT=",
+	"noteContentFormat": "![{{schema:@VideoObject:name}}]({{schema:@VideoObject:embedUrl|replace:\"embed/\":\"watch?v=\"}})\n\n## Description\n\n{{schema:@VideoObject:description}}\n\n## Notes\n\n",
 	"properties": [
-		{
-			"name": "created",
-			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm:ssZ\\\"}}",
-			"type": "datetime"
-		},
-		{
-			"name": "reviewed",
-			"value": "",
-			"type": "datetime"
-		},
-		{
-			"name": "url",
-			"value": "{{schema:@VideoObject:embedUrl|replace:\\\"embed/\\\":\\\"watch?v=\\\"}}",
-			"type": "text"
-		},
 		{
 			"name": "title",
 			"value": "{{schema:@VideoObject:name}}",
 			"type": "text"
 		},
 		{
-			"name": "channel",
-			"value": "{{schema:@VideoObject:author}}",
+			"name": "source",
+			"value": "{{schema:@VideoObject:embedUrl|replace:\\\"embed/\\\":\\\"watch?v=\\\"}}",
 			"type": "text"
 		},
 		{
-			"name": "related",
-			"value": "[[Videos]]",
+			"name": "author",
+			"value": "{{schema:@VideoObject:author|wikilink}}",
 			"type": "multitext"
 		},
 		{
 			"name": "published",
 			"value": "{{schema:@VideoObject:uploadDate|date:\\\"YYYY-MM-DD\\\"}}",
-			"type": "datetime"
+			"type": "date"
 		},
 		{
-			"name": "thumbnailUrl",
+			"name": "created",
+			"value": "{{date}}",
+			"type": "date"
+		},
+		{
+			"name": "image",
 			"value": "{{schema:@VideoObject:thumbnailUrl|first}}",
 			"type": "text"
 		},
@@ -51,14 +40,14 @@
 			"type": "text"
 		},
 		{
-			"name": "watched",
-			"value": "",
-			"type": "text"
+			"name": "tags",
+			"value": "source/video",
+			"type": "multitext"
 		}
 	],
 	"triggers": [
 		"https://www.youtube.com/watch"
 	],
-	"noteNameFormat": "{{schema:@VideoObject:uploadDate|date:\"YYYY-MM-DD\"}} VIDEO {{schema:@VideoObject:author}} - {{schema:@VideoObject:name|safe_name|trim}}",
-	"path": ""
+	"noteNameFormat": "YT - {{schema:@VideoObject:name|safe_name|trim}}",
+	"path": "01 Knowledge/Notes/Sources"
 }

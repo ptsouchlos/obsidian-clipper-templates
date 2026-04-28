@@ -4,7 +4,7 @@
 	"behavior": "create",
 	"noteNameFormat": "CLIP - {{title}}",
 	"path": "00 +Clippings",
-	"noteContentFormat": "# Highlights \n\n> \n\n# Content\n\n{{content}}",
+	"noteContentFormat": "# Highlights \n\n{{highlights|template:\"> [!quote]\\n> ${text}\"|join:\\n\\n}}\n\n# Content\n\n{{content}}",
 	"properties": [
 		{
 			"name": "title",

@@ -2,7 +2,7 @@
 	"schemaVersion": "0.1.0",
 	"name": "Read Later",
 	"behavior": "create",
-	"noteContentFormat": "# Highlights \n\n> \n\n# Content\n\n{{content}}",
+	"noteContentFormat": "# Highlights \n\n{{highlights|template:\"> [!quote]\\n> ${text}\"|join:\\n\\n}}\n\n# Content\n\n{{content}}",
 	"properties": [
 		{
 			"name": "title",
